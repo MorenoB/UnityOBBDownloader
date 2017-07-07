@@ -92,21 +92,6 @@ public static class GooglePlayDownloader
 			}
 		}
 	}
-
-    public static void DeleteOldObbFiles(string expansionFilePath)
-    {
-        if (string.IsNullOrEmpty(expansionFilePath))
-            return;
-
-        for (int i = 1; i < obb_version; i++)
-        {
-            string obbFile = string.Format("{0}/main.{1}.{2}.obb", expansionFilePath, i, obb_package);
-            if (File.Exists(obbFile))
-            {
-                File.Delete(obbFile);
-            }
-        }
-    }
 	
 	// This code will reuse the package version from the .apk when looking for the .obb
 	// Modify as appropriate
